@@ -1,0 +1,50 @@
+@import "nullstyle.scss";
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+$gray: #8C869E;
+
+
+
+body {
+   font-family: 'Inter', sans-serif;
+   color: #141518;
+}
+
+/*----------------ТЕХНИЧЕСКИЕ КЛАССЫ---------------*/
+
+._container {
+   padding: 0 176px;
+   margin: 0 auto;
+}
+
+._imgbg {
+   position: relative;
+   img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+   }
+}
+
+/*----------------ОБЩИЕ КЛАССЫ-----------------*/
+
+.button {
+   padding: 16px 48px 17px 18px;
+   border-radius: 8px;
+   background: #EEEDF1;
+   &_violet {
+      background: #6C3EF8;
+      color: white;
+   }
+}
+
+.title {
+   font-size: 48px;
+   line-height: 112%;
+}
+.subtitle {
+   font-size: 21px;
+   line-height: 133%;
+}
