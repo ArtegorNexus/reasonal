@@ -8,13 +8,27 @@ $gray: #8C869E;
 body {
    font-family: 'Inter', sans-serif;
    color: #141518;
+   width: 100%;
+   background: #EEEDF1;
 }
 
 /*----------------ТЕХНИЧЕСКИЕ КЛАССЫ---------------*/
 
+.wrapper {
+}
 ._container {
    padding: 0 176px;
+   @media (max-width: 767px) {
+      padding: 0 40px;
+   }
+   @media (max-width: 1100px) {
+      padding: 0 70px;
+   }
+   @media (max-width: 479px) {
+      padding: 0 20px;
+   }
    margin: 0 auto;
+   max-width: 1440px;
 }
 
 ._imgbg {
@@ -25,19 +39,41 @@ body {
       left: 0;
       width: 100%;
       height: 100%;
+      
    }
 }
 
 /*----------------ОБЩИЕ КЛАССЫ-----------------*/
+.content {
+   &_header-block {}
+}
 
 .button {
-   padding: 16px 48px 17px 18px;
+   padding: 16px 48px 17px 48px;
    border-radius: 8px;
    background: #EEEDF1;
+   text-align: center;
+   height: 53px;
+   @media (max-width: 1100px) {
+      padding: 16px 33px 17px 33px;
+   }
+   @media (max-width: 767px) {
+      padding: 16px 48px 17px 48px;
+   }
+   a {
+      color: #141518;
+      font-size: 16px;
+      line-height: 121%;
+      
+   }
    &_violet {
       background: #6C3EF8;
-      color: white;
+      a {
+         color: white;
+         margin: 0 auto;
+      }
    }
+   
 }
 
 .title {
@@ -47,4 +83,265 @@ body {
 .subtitle {
    font-size: 21px;
    line-height: 133%;
+}
+
+/*--------------HEADER----------------*/
+.header {
+   
+   height: 100px;
+   position: relative;
+   @media (max-width: 767px) {
+      height: none;
+   }
+   &__container {
+      background-color: white;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+   }
+   &__icon {
+      @media (max-width: 767px) {
+         display: none;
+      }
+      &_767 {
+         display: none;
+         @media (max-width: 767px) {
+            display: inline-block;
+            position: relative;
+            z-index: 20;
+         }
+      }
+   }
+   &__body {
+      width: 100%;
+      display: flex;
+      margin-left: 35.5px;
+      justify-content: space-between;
+      transition: top .3s ease 0s;
+      @media (max-width: 767px) {
+         position: fixed;
+         z-index: 3;
+         top: -100%;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         text-align: center;
+         margin-left: 0;
+         padding-top: 60px;
+         background-color: white;
+         display: inline-block;
+      }
+      &.active {
+         top: 0;
+      }
+   }
+   &__menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @media (max-width: 767px) {
+         display: block;
+      }
+   }
+   &__item {
+      &:not(:last-child){
+         margin-right: 36px;
+         @media (max-width: 1100px) {
+            margin-right: 20px;
+         }
+      }
+      a {
+         color: black;
+         font-size: 15px;
+      }
+      @media (max-width: 767px) {
+         margin-top: 40px;
+         &:not(:last-child){
+            margin-right: 0;
+         }
+         a {
+            font-size: 20px;
+         }
+      }
+   }
+   &__buttons {
+      display: flex;
+      max-width: 365px;
+      @media (max-width: 767px) {
+         display: inline-block;
+         max-width: 400px;
+      }
+   }
+   &__button {
+      @media (max-width: 767px) {
+         width: 100%;
+         margin-top: 20px;
+      }
+      &:not(:last-child){
+         margin-right: 36px;
+         @media (max-width: 767px) {
+            margin-right: 20px;
+         }
+      }
+      a {
+         width: 100%;
+         display: inline-block;
+         text-align: center;
+         
+      }
+   }
+   &__burger {
+   }
+}
+
+.burger-menu {
+   width: 30px;
+   height: 20px;
+   display: none;
+   position: absolute;
+   top: 40px;
+   right: 40px;
+   z-index: 20;
+   @media (max-width: 767px) {
+      display: inline-block;
+   }
+   @media (max-width: 479px) {
+      right: 20px;
+   }
+   &::after {
+      content: '';
+      width: 30px;
+      height: 4px;
+      background-color: black;
+      position: absolute;
+      top: 16px;
+      left: 0;
+      transition: transform .3s ease 0s, top .3s ease 0s;
+   }
+   &::before {
+      content: '';
+      width: 30px;
+      height: 4px;
+      background-color: black;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: transform .3s ease 0s, top .3s ease 0s;
+   }
+   span {
+      height: 4px;
+      background-color: black;
+      width: 30px;
+      position: absolute;
+      top: 8px;
+      left: 0;
+      transition: width .2s ease 0s;
+   }
+   &.active {
+      &::before {
+         transform: rotate(45deg);
+         top: 8px;
+      }
+      &::after {
+         transform: rotate(-45deg);
+         top: 8px;
+      }
+      span {
+         width: 0;
+      }
+   }
+}
+
+
+/*---------------HEADER-BLOCK-----------------*/
+
+.content {
+   &_header-block {}
+   
+}
+.header-block {   
+   &__container {
+      background-color: white;
+      position: relative;
+      height: 100%;
+   }
+   &__body {
+      text-align: center;
+      padding-top: 202px;
+      padding-bottom: 301px;
+      @media (max-width: 1023px) {
+         padding-top: 150px;
+         padding-bottom: 220px;
+      }
+   }
+   &__backimage {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      max-height: 162px;
+      bottom: 0;
+      left: 0;
+
+   }
+   &__title {
+      font-size: 64px;
+      line-height: 111%;
+      word-spacing: 20px;
+      @media (max-width: 1023px) {
+         font-size: 46px;
+         word-spacing: 16px;
+      }
+   }
+   &__subtitle {
+      font-size: 24px;
+      line-height: 133%;
+      color: $gray;
+      max-width: 802px;
+      margin: 21px auto 0 auto;
+      @media (max-width: 1023px) {
+         font-size: 18px;
+         max-width: 600px;
+      }
+   }
+   &__form {
+      display: flex;
+      justify-content: space-between;
+      padding: 4px 5px;
+      max-width: 623px;
+      margin: 30px auto 0 auto;
+      border: 1px solid #9172FA;
+      border-radius: 8px;
+      @media (max-width: 675px) {
+         flex-wrap: wrap;
+      }
+   }
+   &__input {
+      padding: 14px;
+      font-size: 15px;
+      color: $gray;
+      @media (max-width: 675px) {
+         flex: 0 1 100%;
+         text-align: center;
+      }
+   }
+   &__button {
+      color: white;
+      font-size: 17px;
+      @media (max-width: 675px) {
+         flex: 0 1 100%;
+      }
+   }
+   &__text {
+      margin-top: 23px;
+      font-size: 13px;
+      color: #9172FA;
+      @media (max-width: 1023px) {
+         font-size: 10px;
+      }
+   }
+}
+
+.button {
+   &_violet {}
 }
