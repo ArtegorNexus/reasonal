@@ -64,6 +64,10 @@ body {
    background: #EEEDF1;
    text-align: center;
    height: 53px;
+   transition: opacity 0.3s ease 0s;
+   &:hover {
+      opacity: 0.7;
+   }
    @media (max-width: 1100px) {
       padding: 16px 33px 17px 33px;
    }
@@ -1057,6 +1061,10 @@ body {
    &__icon {
       &:not(:last-child) {
          margin-right: 3px;
+      }
+      transition: opacity 0.3s ease 0s;
+      &:hover {
+         opacity: 0.7;
       }
       flex: 0 1 25%;
       img {
