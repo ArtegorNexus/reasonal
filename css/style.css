@@ -116,6 +116,10 @@ body {
      object-fit: cover;
 }
 
+._ovhid {
+  overflow: hidden;
+}
+
 /*----------------ОБЩИЕ КЛАССЫ-----------------*/
 .button {
   padding: 16px 48px 17px 48px;

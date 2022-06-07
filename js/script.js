@@ -1,5 +1,10 @@
-$(document).ready(function(){
-	$('.burger-menu').click(function(event){
-		$('.burger-menu, .header__body').toggleClass('active');
-	});
+"use strict"
+
+let burger = document.querySelector('.burger-menu');
+let header = document.querySelector('.header__body');
+
+burger.addEventListener('click', function(event){
+	burger.classList.toggle('active');
+	header.classList.toggle('active');
+	document.body.classList.toggle('_ovhid');
 });
